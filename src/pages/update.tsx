@@ -23,6 +23,7 @@ const Upload = () => {
       authorRef.current.value = res.data.author
       setImageUrl(res.data.url)
     })
+    // eslint-disable-next-line
   }, [])
   const handleSetImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e)
