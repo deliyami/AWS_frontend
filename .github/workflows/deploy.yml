@@ -62,4 +62,4 @@ jobs:
           --deployment-config-name CodeDeployDefault.OneAtATime \
           # deploy group name
           --deployment-group-name frontend \
-          --s3-location bucket=frontend-build,bundleType=zip,key=deploy/frontend.zip
+          --s3-location bucket=deliyami,bundleType=zip,key=frontend/frontend.zip
