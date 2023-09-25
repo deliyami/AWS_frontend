@@ -54,7 +54,7 @@ jobs:
           aws-region: ap-northeast-1
 
       - name: 🦖 zipped code upload to S3 🦖
-        run: aws s3 cp --region ap-northeast-1 ./frontend.zip s3://deliyami/frontend/
+        run: aws s3 cp --region ap-northeast-1 ./frontend.zip s3://deliyami/frontend/frontend.zip --source .
 
       - name: 🚀 deploy with AWS codeDeploy 🚀
         run: aws deploy create-deployment \
@@ -62,4 +62,5 @@ jobs:
           --deployment-config-name CodeDeployDefault.OneAtATime \
           # deploy group name
           --deployment-group-name frontend \
+          --description "image resize frontend" \
           --s3-location bucket=deliyami,bundleType=zip,key=frontend/frontend.zip
