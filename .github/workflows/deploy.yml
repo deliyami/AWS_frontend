@@ -57,9 +57,9 @@ jobs:
         run: aws s3 cp --region ap-northeast-1 ./frontend.zip s3://deliyami/frontend/
 
       - name: 🚀 deploy with AWS codeDeploy 🚀
-        run: aws deploy create-deployment
-          --application-name frontend-deploy
-          --deployment-config-name CodeDeployDefault.OneAtATime
-          # 배포 그룹 이름
-          --deployment-group-name frontend
+        run: aws deploy create-deployment \
+          --application-name frontend-deploy \
+          --deployment-config-name CodeDeployDefault.OneAtATime \
+          # deploy group name
+          --deployment-group-name frontend \
           --s3-location bucket=frontend-build,bundleType=zip,key=deploy/frontend.zip
