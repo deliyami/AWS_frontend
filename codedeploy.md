@@ -43,3 +43,13 @@ sudo ./install auto
 
 # check install & check servicing status codedeploy-agent
 sudo service codedeploy-agent status 
+
+# codedeploy-agent auto start when ec2 instance boot
+sudo vim /etc/init.d/codedeploy-startup.sh
+
+```
+#!/bin
+sudo service codedeploy-agent restart
+```
+
+sudo chmod +x /etc/init.d/codedeploy-startup.sh
