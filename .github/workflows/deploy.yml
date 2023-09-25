@@ -34,7 +34,7 @@ jobs:
 
       - name: ✨ package install ✨
         working-directory: ./
-        run: npm
+        run: npm install
         
       - name: ✨ build ✨
         working-directory: ./
