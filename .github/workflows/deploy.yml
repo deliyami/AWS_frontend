@@ -60,7 +60,6 @@ jobs:
         run: aws deploy create-deployment \
           --application-name frontend-deploy \
           --deployment-config-name CodeDeployDefault.OneAtATime \
-          # deploy group name
           --deployment-group-name frontend \
           --description "image resize frontend" \
           --s3-location bucket=deliyami,bundleType=zip,key=frontend/frontend.zip
