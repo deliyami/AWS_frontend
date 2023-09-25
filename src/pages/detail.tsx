@@ -29,6 +29,7 @@ const Detail = () => {
     setTimeout(() => {
       SetProgressPercentage((v) => v + 5 + Math.round(Math.random() * 50))
     }, 250 + Math.round(Math.random() * 500));
+    // eslint-disable-next-line
   }, [progressPercentage, SetProgressPercentage])
   const deleteHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()

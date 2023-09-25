@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useRef } from 'react'
-import { FormLabel, Image, Input, Link, LinkBox, LinkOverlay, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import { FormLabel, Image, Input, LinkBox, LinkOverlay, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import axios, { AxiosRequestConfig } from 'axios';
 import { ImagePreview } from '@/types';
 
@@ -21,6 +21,7 @@ const Home = () => {
     axios.get(`getImages`, option).then((res) => {
       setImages(res.data)
     })
+    // eslint-disable-next-line
   }, [])
   useEffect(() => {
     console.log(window);
