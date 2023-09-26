@@ -44,7 +44,7 @@ jobs:
         run: npm run build
 
       - name: 📦 builded code packing 📦
-        run: zip -r frontend.zip ./build ./scripts ./appspec.yml ./.env ./package.json
+        run: zip -r frontend.zip ./build ./scripts ./server.js ./appspec.yml ./.env ./package.json
 
       - name: 🌎 AWS connect 🌎
         uses: aws-actions/configure-aws-credentials@v1
