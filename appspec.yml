@@ -4,6 +4,7 @@ files:
   - source: /
     destination: /home/ubuntu/build
     overwrite: yes
+    delete: true
 
 permissions:
   - object: /home/ubuntu
