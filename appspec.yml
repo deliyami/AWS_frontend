@@ -6,6 +6,8 @@ files:
     overwrite: yes
     delete: true
 
+file_exists_behavior: OVERWRITE
+
 permissions:
   - object: /home/ubuntu
     pattern: '**'
