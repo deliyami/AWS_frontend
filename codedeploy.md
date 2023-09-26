@@ -1,3 +1,4 @@
+# use swap memory for npm install
 sudo dd if=/dev/zero of=/swapfile bs=1M count=1024
 sudo mkswap /swapfile
 sudo swapon /swapfile
@@ -5,6 +6,7 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
 free -m
 
+# install node
 sudo apt-get update -y
 sudo apt-get install -y ca-certificates curl gnupg
 sudo mkdir -p /etc/apt/keyrings
@@ -26,13 +28,13 @@ export NVM_DIR="$HOME/.nvm"
 nvm install --lts
 
 # yarn install
-sudo npm install -g yarn
+npm install -g yarn
 
 # pm2 install
-sudo npm install -g pm2
+npm install -g pm2
 
 # react-scripts install
-sudo npm install -g react-scripts
+npm install -g react-scripts
 
 # git install
 sudo apt-get update
