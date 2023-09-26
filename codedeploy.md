@@ -1,3 +1,10 @@
+sudo dd if=/dev/zero of=/swapfile bs=1M count=1024
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+
+free -m
+
 sudo apt-get update -y
 sudo apt-get install -y ca-certificates curl gnupg
 sudo mkdir -p /etc/apt/keyrings
@@ -24,10 +31,12 @@ sudo npm install -g yarn
 # pm2 install
 sudo npm install -g pm2
 
+# react-scripts install
+sudo npm install -g react-scripts
+
 # git install
 sudo apt-get update
 sudo apt-get install git
-
 
 # aws install
 sudo apt-get update
