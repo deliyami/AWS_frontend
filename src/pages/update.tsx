@@ -13,7 +13,7 @@ const Upload = () => {
   const [image, setImage] = useState<File>()
   const navigate = useNavigate()
   const option: AxiosRequestConfig = {
-    baseURL: `http://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}`,
+    baseURL: `http://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}/`,
   }
   useEffect(() => {
     axios.get(`getImageDetail/${location.pathname.split('/')[2]}`, option).then((res) => {

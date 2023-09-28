@@ -15,7 +15,7 @@ const Home = () => {
     if (imageID) navigate(`detail/${imageID}`)
   }
   const option: AxiosRequestConfig = {
-    baseURL: `http://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}`,
+    baseURL: `http://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}/`,
   }
   useEffect(() => {
     axios.get(`getImages`, option).then((res) => {

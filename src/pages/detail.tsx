@@ -12,7 +12,7 @@ const Detail = () => {
   const [progressPercentage, SetProgressPercentage] = useState<number>(0)
   const [exist, setExist] = useState<boolean>(false)
   const option: AxiosRequestConfig = {
-    baseURL: `http://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}`,
+    baseURL: `http://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}/`,
   }
   useEffect(() => {
     console.log('this is hell', progressPercentage);
