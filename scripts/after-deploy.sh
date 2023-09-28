@@ -14,4 +14,5 @@ sudo npm install
 # npx pm2 start npm -- start
 # sudo pm2 start server.js
 sudo mv .env build
-sudo /usr/bin/pm2 start build/index.html
+cd build
+sudo /usr/bin/pm2 start index.html
