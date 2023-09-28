@@ -28,13 +28,13 @@ export NVM_DIR="$HOME/.nvm"
 nvm install --lts
 
 # yarn install
-npm install -g yarn
+sudo npm install -g yarn
 
 # pm2 install
-npm install -g pm2
+sudo npm install -g pm2
 
 # react-scripts install
-npm install -g react-scripts
+sudo npm install -g react-scripts
 
 # git install
 sudo apt-get update
@@ -51,7 +51,7 @@ sudo aws configure
 # Default output format [None]: json
 
 # codedeploy agent install
-wget https://aws-codedeploy-ap-northeast-2.s3.amazonaws.com/latest/install
+wget https://aws-codedeploy-ap-northeast-1.s3.amazonaws.com/latest/install
 chmod +x ./install
 
 sudo apt-get install ruby
