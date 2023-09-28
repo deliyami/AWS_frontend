@@ -12,7 +12,4 @@ sudo npm install
 # sudo /usr/bin/pm2 start build
 
 # npx pm2 start npm -- start
-# sudo pm2 start server.js
-sudo mv .env build
-cd build
-sudo /usr/bin/pm2 start index.html
+sudo pm2 start server.js
