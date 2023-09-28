@@ -1,3 +1,4 @@
+require('dotenv').config();
 const http = require("http");
 const express = require("express");
 const path = require("path");
@@ -18,6 +19,11 @@ app.get("/*", (req, res) => {
     Pragma: "no-cache",
     Date: Date.now()
   });
+  res.json({
+    REACT_APP_API_URL: process.env.REACT_APP_API_URL,
+    REACT_APP_API_PORT: process.env.REACT_APP_API_PORT,
+    REACT_APP_S3_URL: process.env.REACT_APP_S3_URL
+  })
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
