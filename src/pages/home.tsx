@@ -20,6 +20,9 @@ const Home = () => {
   useEffect(() => {
     axios.get(`getImages`, option).then((res) => {
       setImages(res.data)
+    }).catch((e) => {
+      console.log(e)
+      console.log(option)
     })
     // eslint-disable-next-line
   }, [])
