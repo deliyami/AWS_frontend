@@ -16,13 +16,13 @@ const Home = () => {
   }
   const option: AxiosRequestConfig = {
     baseURL: `http://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}/`,
+    withCredentials: true,
   }
   useEffect(() => {
     axios.get(`getImages`, option).then((res) => {
       setImages(res.data)
     }).catch((e) => {
       console.log(e)
-      console.log(option)
     })
     // eslint-disable-next-line
   }, [])
