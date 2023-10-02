@@ -4,8 +4,13 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 
+const corsOptions = {
+  origin: '*',
+  credential: true,
+}
+
 const app = express();
-app.use(cors())
+app.use(cors(corsOptions))
 
 const port = 3000;
 
