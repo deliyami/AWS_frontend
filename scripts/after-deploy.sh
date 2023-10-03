@@ -4,7 +4,7 @@ REPOSITORY=/home/ubuntu/build
 cd $REPOSITORY
 
 sudo npx pm2 kill
-sudo yarn
+npm i
 
 # sudo /usr/bin/yarn db:pull # when use prisma
 # sudo /usr/bin/yarn generate # when use prisma
