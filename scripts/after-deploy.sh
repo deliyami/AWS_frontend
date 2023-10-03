@@ -10,5 +10,5 @@ sudo yarn
 # sudo /usr/bin/yarn generate # when use prisma
 # sudo /usr/bin/pm2 start build
 
-# npx pm2 start npm -- start
+# sudo pm2 start npm -- start
 sudo pm2 start server.js
