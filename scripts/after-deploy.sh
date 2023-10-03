@@ -3,7 +3,7 @@ REPOSITORY=/home/ubuntu/build
 
 cd $REPOSITORY
 
-sudo npx pm2 kill
+sudo pm2 kill
 npm i
 
 # sudo /usr/bin/yarn db:pull # when use prisma
