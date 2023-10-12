@@ -4,12 +4,17 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 
-const corsOptions = {
-  origin: '*',
-  credential: true,
-}
 
 const app = express();
+app.options('*', cors());
+
+const corsOptions = {
+  credentials: true,
+  origin: `http://${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}`,
+  methods: 'POST, PUT, GET, DELETE',
+  allowedHeaders: 'Access-Control-Allow-Origin, Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization',
+};
+
 app.use(cors(corsOptions))
 
 const port = 3000;
