@@ -30,9 +30,9 @@ jobs:
         run: |
           pwd
           touch .env
-          echo DATABASE_URL=${{ secrets.REACT_APP_API_URL }} >> .env
-          echo DATABASE_URL=${{ secrets.REACT_APP_API_PORT }} >> .env
-          echo DATABASE_URL=${{ secrets.REACT_APP_S3_URL }} >> .env
+          echo REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }} >> .env
+          echo REACT_APP_API_PORT=${{ secrets.REACT_APP_API_PORT }} >> .env
+          echo REACT_APP_S3_URL=${{ secrets.REACT_APP_S3_URL }} >> .env
           cat .env
 
       - name: ✨ package install ✨
