@@ -25,20 +25,24 @@ app.get("/ping", (req, res) => {
 
 app.use(express.static(path.join(__dirname, "build")));
 
-app.get("/*", (req, res) => {
-  res.json({
-    REACT_APP_API_URL: process.env.REACT_APP_API_URL,
-    REACT_APP_API_PORT: process.env.REACT_APP_API_PORT,
-    REACT_APP_S3_URL: process.env.REACT_APP_S3_URL
-  })
+app.get("*", (req, res) => {
   res.set({
     "Cache-Control": "no-cache, no-store, must-revalidate",
     Pragma: "no-cache",
     Date: Date.now()
   });
+
+  const resData = {
+    REACT_APP_API_URL: process.env.REACT_APP_API_URL,
+    REACT_APP_API_PORT: process.env.REACT_APP_API_PORT,
+    REACT_APP_S3_URL: process.env.REACT_APP_S3_URL,
+    html: path.join(__dirname, "build", "index.html")
+  }
+  
+  res.json(resData)
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 http.createServer(app).listen(port, () => {
-  console.log(`app listening at ${port}`);
+  console.log(`app listening at ${port}, Today now:${Date.now()}`);
 });

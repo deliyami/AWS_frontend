@@ -20,17 +20,17 @@ const Detail = () => {
     withCredentials: true,
   }
   useEffect(() => {
+    axios.get(`getImageDetail/${paramID}`, option).then(res => {
+      if(res.data.id) {
+        setExist(true)
+        setImage(res.data)
+      }
+    })
+    // eslint-disable-next-line
+  }, [])
+  useEffect(() => {
     console.log('this is hell', progressPercentage);
-    if (progressPercentage >= 100) {
-      axios.get(`getImageDetail/${paramID}`, option).then(res => {
-        console.log(res);
-        if(res.data.id) {
-          setExist(true)
-          setImage(res.data)
-        }
-      })
-      return
-    }
+    if (progressPercentage >= 100) return
     setTimeout(() => {
       SetProgressPercentage((v) => v + 5 + Math.round(Math.random() * 50))
     }, 250 + Math.round(Math.random() * 500));
@@ -44,7 +44,7 @@ const Detail = () => {
     })
   }
   return (<Box width='50%'>
-    {(progressPercentage > 100) && exist ? <>
+    {(progressPercentage >= 100) && exist ? <>
       <Text>id: {image?.id}</Text>
       <Text>title: {image?.title}</Text>
       <Text>img url: {image?.url}</Text>
